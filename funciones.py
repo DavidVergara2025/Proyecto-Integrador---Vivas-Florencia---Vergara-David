@@ -20,17 +20,15 @@ def elegir_base(destinos):
 #Cálculo de las distancias desde cada punto al elegido por el usuario (con teorema de pitágoras)
 def calcular_distancia(destinos, base):
     distancias = []
-    par_lugar_distancia = {}
     for i in destinos:
         x2 = i["x"]
         y2 = i["y"]
         x1 = base["x"]
         y1 = base["y"]
-        distancia = math.sqrt((x2-x1)**2 + (y2-y1)**2)
-        par_lugar_distancia = {i["Lugar"] : distancia}
-        distancias.append(par_lugar_distancia)
+        distancia = round((math.sqrt((x2-x1)**2 + (y2-y1)**2)), 2)
+        distancias.append((i["Lugar"], distancia)) #Va formando una lista de tuplas con el nombre del lugar y la distancia calculada
 
-    return distancias #Devuelve una lista con las distancias desde cada punto
+    return distancias #Devuelve la lista de tuplas 
 
 
 
