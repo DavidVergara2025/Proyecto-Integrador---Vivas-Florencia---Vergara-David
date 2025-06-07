@@ -1,7 +1,7 @@
 
-import random
-import math
 import funciones
+import ordenamiento
+import busqueda
 
 print("""========PROYECTO INTEGRADOR - PROGRAMACIÓN I=========
         2025 - UTN - TUPaD 
@@ -31,7 +31,14 @@ for i in distancias:
 
 # Ordenamiento de la lista de distancias
 
+#Bubble Sort (Ordenamiento por burbuja):
 
+#Quick Sort (Ordenamiento rápido):
 
+#Selection Sort (Ordenamiento por selección):
+distancias_seleccion = distancias
+ordenamiento.ordenamiento_seleccion(distancias_seleccion)
 
-
+#Insertion Sort (Ordenamiento por inserción):
+distancias_insercion = distancias
+ordenamiento.ordenamiento_insercion(distancias_insercion)

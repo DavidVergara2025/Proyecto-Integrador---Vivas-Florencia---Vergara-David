@@ -18,6 +18,21 @@ def ordenamiento_seleccion(distancias):
     tiempo_fin = time.time()  # Marca el tiempo de fin
     tiempo_total = tiempo_fin - tiempo_inicio  # Calcula el tiempo total de ejecución
     print(f"Tiempo del ordenamiento por selección: {tiempo_total}")
-    return distancias
+    return distancias #Devuelve la lista ordenada por selección
+
 
 #Insertion Sort (Ordenamiento por inserción):
+def ordenamiento_insercion(distancias):
+    tiempo_inicio = time.time()  # Marca el tiempo de inicio
+    for i in range(1, len(distancias)):
+        clave = distancias[i]
+        j = i - 1
+        # Mueve los elementos de distancias[0..i-1], que son mayores que clave, a una posición adelante de su posición actual
+        while j >= 0 and clave[1] < distancias[j][1]:
+            distancias[j + 1] = distancias[j]
+            j -= 1
+        distancias[j + 1] = clave
+    tiempo_fin = time.time()  # Marca el tiempo de fin
+    tiempo_total = tiempo_fin - tiempo_inicio  
+    print(f"Tiempo del ordenamiento por inserción: {tiempo_total}")
+    return distancias #Devuelve la lista ordenada por inserción
