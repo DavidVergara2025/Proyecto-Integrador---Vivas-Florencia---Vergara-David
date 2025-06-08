@@ -33,10 +33,19 @@ def generar_destinos(n):
     return destinos
 
 #Devuelve el elemento elegido por el usuario (Lugar y coordenadas)
-def elegir_base(destinos):
-    print(f"\nElija el lugar (número entre 1 y {len(destinos)}) para calcular la distancia a los demas puntos: \n")
-    base = int(input("\nLugar: "))
-    print(f"Lugar elegido : {base}(x : {destinos[base -1]['x']}, y :{destinos[base -1]['y']})")
+def elegir_base(destinos, n):
+    base = 0
+    print(f"\nElija su ubicación (número entre 1 y {len(destinos)}) para calcular la distancia a los demas puntos: \n")
+    while base <= 0 or base > n : 
+        try:
+            base = int(input("\nLugar: "))
+            if base <= 0 or base > n :
+                print("Valor incorrecto.")
+            else:
+                print(f"Lugar elegido : {base}(x : {destinos[base -1]['x']}, y :{destinos[base -1]['y']})")
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+        
     return destinos[base -1]
 
 #Cálculo de las distancias desde cada punto al elegido por el usuario (con teorema de pitágoras)

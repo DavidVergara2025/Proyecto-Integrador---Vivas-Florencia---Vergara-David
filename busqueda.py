@@ -1,8 +1,19 @@
-#Busqueda lineal de un lugar en la lista de distancias
+import time
+
 def busqueda_lineal(distancias, lugar):
+    tiempo_inicio = time.time()
+    cont = 0
     for i in distancias:
-        if i[0].lower() == lugar.lower():
+        cont += 1
+        if i[0].lower() == f"lugar {lugar}":
+            tiempo_fin = time.time()
+            tiempo_total = tiempo_fin - tiempo_inicio
+            print(f"Distancia hasta {i[0]}: {i[1]}")
+            print(f"Posición en el ranking de distancias: {cont}")
+            print(f"Tiempo de búsqueda lineal: {tiempo_total}")
             return i
-    if lugar.lower() not in [i[0].lower() for i in distancias]:
-        print(f"{lugar} no se encuentra en la lista.")
-        return None  # Si no se encuentra el lugar, devuelve None
+    tiempo_fin = time.time()
+    tiempo_total = tiempo_fin - tiempo_inicio
+    print(f"Tiempo de búsqueda lineal: {tiempo_total}")
+    print(f"{lugar} no se encuentra en la lista.")
+    return None
