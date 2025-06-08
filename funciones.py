@@ -12,6 +12,7 @@ def inicio():
             print("Por favor, ingrese un número positivo válido.")
     return n
 
+#Si la lista es chica, se muestra por pantalla
 def mostrar_lista(n, destinos):
     if n < 20:
         for i in destinos:
@@ -19,7 +20,7 @@ def mostrar_lista(n, destinos):
     else:
         print("La lista fue guardada pero es demasiado extensa para mostrarla por pantalla")
 
-#Funcion que genera una lista de lugares con coordenadas aleatorias
+#Genera una lista de lugares con coordenadas aleatorias
 def generar_destinos(n):
     destinos = []
     for i in range(1, n+1):
@@ -31,7 +32,7 @@ def generar_destinos(n):
         destinos.append(destino) #Se agrega cada lugar generado con sus coordenadas a la lista destinos
     return destinos
 
-#Devuelve el elemento elegido por el usuario ((Lugar y coordenadas)
+#Devuelve el elemento elegido por el usuario (Lugar y coordenadas)
 def elegir_base(destinos):
     print(f"\nElija el lugar (número entre 1 y {len(destinos)}) para calcular la distancia a los demas puntos: \n")
     base = int(input("\nLugar: "))
