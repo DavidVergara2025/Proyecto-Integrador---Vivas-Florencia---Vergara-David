@@ -1,11 +1,12 @@
 import time
+
 #Bubble Sort (Ordenamiento por burbuja):
 
 #Quick Sort (Ordenamiento rápido):
 
 #Selection Sort (Ordenamiento por selección):
 def ordenamiento_seleccion(distancias):
-    tiempo_inicio = time.time()  # Marca el tiempo de inicio
+    tiempo_inicio = time.time()         # Marca el tiempo de inicio
     n = len(distancias)
     for i in range(n):
         # Encuentra el índice del elemento mínimo en la parte no ordenada de la lista
@@ -15,15 +16,15 @@ def ordenamiento_seleccion(distancias):
                 minimo = j
         # Intercambia el mínimo encontrado con el primer elemento
         distancias[i], distancias[minimo] = distancias[minimo], distancias[i]
-    tiempo_fin = time.time()  # Marca el tiempo de fin
+    tiempo_fin = time.time()        # Marca el tiempo de fin
     tiempo_total = tiempo_fin - tiempo_inicio  # Calcula el tiempo total de ejecución
     print(f"Tiempo del ordenamiento por selección: {tiempo_total}")
-    return distancias #Devuelve la lista ordenada por selección
+    return distancias               #Devuelve la lista ordenada por selección
 
 
 #Insertion Sort (Ordenamiento por inserción):
 def ordenamiento_insercion(distancias):
-    tiempo_inicio = time.time()  # Marca el tiempo de inicio
+    tiempo_inicio = time.time()        # Marca el tiempo de inicio
     for i in range(1, len(distancias)):
         clave = distancias[i]
         j = i - 1
@@ -32,7 +33,7 @@ def ordenamiento_insercion(distancias):
             distancias[j + 1] = distancias[j]
             j -= 1
         distancias[j + 1] = clave
-    tiempo_fin = time.time()  # Marca el tiempo de fin
+    tiempo_fin = time.time()        # Marca el tiempo de fin
     tiempo_total = tiempo_fin - tiempo_inicio  
     print(f"Tiempo del ordenamiento por inserción: {tiempo_total}")
-    return distancias #Devuelve la lista ordenada por inserción
+    return distancias               #Devuelve la lista ordenada por inserción

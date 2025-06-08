@@ -10,35 +10,43 @@ print("""========PROYECTO INTEGRADOR - PROGRAMACIÓN I=========
         Bienvenido al gestor de distancias entre lugares.
         Este programa genera una lista de lugares con coordenadas aleatorias.
         Luego, el usuario puede elegir uno de ellos para calcular la distancia a los demás puntos.
-        A continuación, se ordena la lista mediante distintos métodos de ordenamiento y se permiten realizar búsquedas.
+        A continuación, se ordena la lista mediante distintos métodos de ordenamiento, se comparan 
+        los tiempos de ejecución y se permiten realizar búsquedas.
       """)
 
-n = int(input("Ingrese la cantidad de lugares a generar: \n"))
-destinos = funciones.generar_destinos(n)
+n = funciones.inicio()
+destinos = funciones.generar_destinos(n)    #Genera lugares con coordenadas "x" e "y" aleatorias
 
-if n < 20:
-    for i in destinos:
-        print(f"Lugar: {i['Lugar']}, Coordenadas: ({i['x']}, {i['y']})")  # Muestra cada lugar con sus coordenadas
-else:
-    print("La lista fue guardada pero es demasiado extensa para mostrarla por pantalla")
+funciones.mostrar_lista(n, destinos)    # Si la lista es pequeña, muestra cada lugar con sus coordenadas
 
-base = funciones.elegir_base(destinos)
-print(f"Lugar elegido : {base}\n")
+base = funciones.elegir_base(destinos)  # Elección del lugar (base) para calcular distancias a los demás puntos
 
-distancias = funciones.calcular_distancia(destinos, base)
-for i in distancias:
-    print(f"{i[0]}, Distancia: {i[1]}")  # Muestra el lugar y la distancia calculada desde el lugar elegido
+ # Pausa para que el usuario pueda leer el lugar elegido antes de continuar
 
-# Ordenamiento de la lista de distancias
+# Cálculo de distancias desde el lugar elegido a los demás puntos
+distancias = funciones.calcular_distancia(destinos, base, n)
+
+input("Presione Enter para continuar a la sección de ordenamiento.") 
+
+# =============Ordenamiento de la lista de distancias===================
+print("\n=== Ordenamiento de distancias ===")
 
 #Bubble Sort (Ordenamiento por burbuja):
 
 #Quick Sort (Ordenamiento rápido):
 
-#Selection Sort (Ordenamiento por selección):
-distancias_seleccion = distancias
-ordenamiento.ordenamiento_seleccion(distancias_seleccion)
 
-#Insertion Sort (Ordenamiento por inserción):
-distancias_insercion = distancias
-ordenamiento.ordenamiento_insercion(distancias_insercion)
+distancias_seleccion = ordenamiento.ordenamiento_seleccion(distancias.copy())  #Selection Sort (Ordenamiento por selección)
+
+distancias_insercion = ordenamiento.ordenamiento_insercion(distancias.copy())  #Insertion Sort (Ordenamiento por inserción)
+
+funciones.mostrar_listas_ordenadas(n, distancias_seleccion, distancias_insercion)   #Muestra las listas ordenadas si son chicas
+
+input("Presione Enter para continuar a la sección de búsqueda.")    
+
+# =============Búsqueda en la lista de distancias===================
+print("""\n=== Búsqueda de lugares ===
+      Ingrese el lugar que desea buscar (Se mostrará la distancia hasta su ubicación, y la posición que ocupa en el ranking de distancias)\n
+      """)
+lugar = input("Lugar: ")
+
