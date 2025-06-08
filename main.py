@@ -19,7 +19,7 @@ destinos = funciones.generar_destinos(n)    #Genera lugares con coordenadas "x" 
 
 funciones.mostrar_lista(n, destinos)    # Si la lista es pequeña, muestra cada lugar con sus coordenadas
 
-base = funciones.elegir_base(destinos)  # Elección del lugar (base) para calcular distancias a los demás puntos
+base = funciones.elegir_base(destinos, n)  # Elección del lugar (base) para calcular distancias a los demás puntos
 
  # Pausa para que el usuario pueda leer el lugar elegido antes de continuar
 
@@ -45,7 +45,8 @@ input("Presione Enter para continuar a la sección de búsqueda.")
 
 # =============Búsqueda en la lista de distancias===================
 print("""\n=== Búsqueda de lugares ===
-      Ingrese el lugar que desea buscar (Se mostrará la distancia hasta su ubicación, y la posición que ocupa en el ranking de distancias)\n
-      """)
+Ingrese el lugar que desea buscar (Se mostrará la distancia hasta su ubicación, y la posición que ocupa en el ranking de distancias)\n
+""")
 lugar = input("Lugar: ")
+busqueda.busqueda_lineal(distancias_insercion, lugar)
 
