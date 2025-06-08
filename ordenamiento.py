@@ -1,7 +1,17 @@
 import time
 
 #Bubble Sort (Ordenamiento por burbuja):
-
+def ordenamiento_bubble(distancias):
+    tiempo_inicio = time.time()
+    n = len(distancias)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if distancias[j][1] > distancias[j + 1][1]:
+                distancias[j], distancias[j + 1] = distancias[j + 1], distancias[j]
+    tiempo_fin = time.time()
+    tiempo_total = tiempo_fin - tiempo_inicio
+    print(f"Tiempo del ordenamiento por burbuja: {tiempo_total}")
+    return distancias
 #Quick Sort (Ordenamiento rápido):
 
 #Selection Sort (Ordenamiento por selección):

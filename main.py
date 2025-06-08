@@ -32,15 +32,14 @@ input("Presione Enter para continuar a la sección de ordenamiento.")
 print("\n=== Ordenamiento de distancias ===")
 
 #Bubble Sort (Ordenamiento por burbuja):
-
+distancias_bubble = ordenamiento.ordenamiento_bubble(distancias.copy()) #Ordenamiento por Burbuja
 #Quick Sort (Ordenamiento rápido):
-
 
 distancias_seleccion = ordenamiento.ordenamiento_seleccion(distancias.copy())  #Selection Sort (Ordenamiento por selección)
 
 distancias_insercion = ordenamiento.ordenamiento_insercion(distancias.copy())  #Insertion Sort (Ordenamiento por inserción)
 
-funciones.mostrar_listas_ordenadas(n, distancias_seleccion, distancias_insercion)   #Muestra las listas ordenadas si son chicas
+funciones.mostrar_listas_ordenadas(n, distancias_seleccion, distancias_insercion,distancias_bubble)   #Muestra las listas ordenadas si son chicas
 
 input("Presione Enter para continuar a la sección de búsqueda.")    
 
