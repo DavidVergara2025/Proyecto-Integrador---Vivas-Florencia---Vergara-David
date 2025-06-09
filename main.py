@@ -51,3 +51,6 @@ Ingrese el lugar que desea buscar (Se mostrará la distancia hasta su ubicación
 lugar = input("Lugar: ")
 busqueda.busqueda_lineal(distancias_insercion, lugar)
 
+#Búsqueda lineal y binaria en lista ordenada
+busqueda.lineal_ordenada(distancias_insercion)
+busqueda.binaria(distancias_insercion)
