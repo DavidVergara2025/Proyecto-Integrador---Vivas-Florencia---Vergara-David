@@ -65,8 +65,16 @@ def calcular_distancia(destinos, base, n):
     else : print("Se guardaron las distancias, pero la lista es demasiado grande para mostrarse")
     return distancias #Devuelve la lista de tuplas 
 
-def mostrar_listas_ordenadas(n, distancias_seleccion, distancias_insercion, distancias_bubble, distancias_quick): 
+def mostrar_listas_ordenadas(n, distancias_bubble, distancias_quick, distancias_seleccion, distancias_insercion): 
     if n < 15:
+        input("Presione Enter para continuar.")
+        print("\nLista ordenada por Bubble sort:")
+        for i in distancias_bubble:
+            print(f"{i[0]}, Distancia: {i[1]}")
+        input("Presione Enter para continuar.")
+        print("\nLista ordenada por quick sort:")
+        for i in distancias_quick:
+            print(f"{i[0]}, Distancia: {i[1]}")   
         input("Presione Enter para continuar")
         print("\nLista ordenada por selección:")
         for i in distancias_seleccion:
@@ -74,16 +82,18 @@ def mostrar_listas_ordenadas(n, distancias_seleccion, distancias_insercion, dist
         input("Presione Enter para continuar.")
         print("\nLista ordenada por inserción:")
         for i in distancias_insercion:
-            print(f"{i[0]}, Distancia: {i[1]}")
-        input("Presione Enter para continuar.")
-        print("\nLista ordenada por Bubble sort:")
-        for i in distancias_bubble:
-            print(f"{i[0]}, Distancia: {i[1]}")
-        input("Presione Enter para continuar.")
-    else:
-        print("/Lista ordenada por quick sort:")
-        for i in distancias_quick:
-            print(f"{i[0]}, Distancia: {i[1]}")
-        input("Presione Enter para continuar.")
+            print(f"{i[0]}, Distancia: {i[1]}")      
+        return None
     
-
+def obtener_objetivo():
+    print("A continuación, puede buscar la distancia más cercana a un valor objetivo mediante búsqueda binaria y lineal.")        
+    # Se solicita al usuario la distancia deseada
+    objetivo = -1
+    while objetivo < 0:
+        try:
+            objetivo = float(input("Ingrese la distancia que desea buscar (se mostrará el lugar más cercano): "))
+            if objetivo < 0:
+                print("Por favor, ingrese un número positivo.")
+        except ValueError:
+            print("Entrada inválida. Por favor, ingrese un número válido.")  
+    return objetivo
