@@ -2,17 +2,35 @@ import time
 
 #Bubble Sort (Ordenamiento por burbuja):
 def ordenamiento_bubble(distancias):
-    tiempo_inicio = time.time()
+    tiempo_inicio = time.time() #Marca el tiempo de inicio 
     n = len(distancias)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if distancias[j][1] > distancias[j + 1][1]:
+    for i in range(n): #Recorre la lista n veces
+        for j in range(0, n - i - 1):#Compara cada elemento con el siguiente
+            if distancias[j][1] > distancias[j + 1][1]:#Condicion de ordenamiento: Si el elemento actual es mayor que el siguiente, los intercambia.
                 distancias[j], distancias[j + 1] = distancias[j + 1], distancias[j]
-    tiempo_fin = time.time()
-    tiempo_total = tiempo_fin - tiempo_inicio
+    tiempo_fin = time.time() #Marca el tiempo final
+    tiempo_total = tiempo_fin - tiempo_inicio #Calcula el tiempo total de ejecucion
     print(f"Tiempo del ordenamiento por burbuja: {tiempo_total}")
-    return distancias
+    return distancias #Devuelve la lista ordenada por bubble sort
+
 #Quick Sort (Ordenamiento rápido):
+def ordenamiento_quick(distancias):
+    tiempo_inicio = time.time() #Marca el tiempo de inicio
+    def quick_sort(lista):
+        if len(lista) <= 1: #Si la lista tiene un solo elemento o está vacía, ya está ordenada
+            return lista
+        else:
+            pivot = lista[len(lista) // 2] #Elige el pivote como el elemento del medio
+            menores = [x for x in lista if x[1] < pivot[1]] #Elementos menores que el pivote
+            iguales = [x for x in lista if x[1] == pivot[1]] #Elementos iguales al pivote
+            mayores = [x for x in lista if x[1] > pivot[1]] #Elementos mayores que el pivote
+            return quick_sort(menores) + iguales + quick_sort(mayores) #Recursión para ordenar los sublistas
+    resultado = quick_sort(distancias)
+    tiempo_fin = time.time() #Marca el tiempo final
+    tiempo_total = tiempo_fin - tiempo_inicio #Calcula el tiempo total de ejecuccion.
+    print(f"Tiempo del ordenamiento rápido: {tiempo_total}")
+    return resultado #Devuelve la lista ordenada por quick sort
+
 
 #Selection Sort (Ordenamiento por selección):
 def ordenamiento_seleccion(distancias):

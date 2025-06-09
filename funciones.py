@@ -65,7 +65,7 @@ def calcular_distancia(destinos, base, n):
     else : print("Se guardaron las distancias, pero la lista es demasiado grande para mostrarse")
     return distancias #Devuelve la lista de tuplas 
 
-def mostrar_listas_ordenadas(n, distancias_seleccion, distancias_insercion, distancias_bubble): 
+def mostrar_listas_ordenadas(n, distancias_seleccion, distancias_insercion, distancias_bubble, distancias_quick): 
     if n < 15:
         input("Presione Enter para continuar")
         print("\nLista ordenada por selección:")
@@ -78,6 +78,11 @@ def mostrar_listas_ordenadas(n, distancias_seleccion, distancias_insercion, dist
         input("Presione Enter para continuar.")
         print("\nLista ordenada por Bubble sort:")
         for i in distancias_bubble:
+            print(f"{i[0]}, Distancia: {i[1]}")
+        input("Presione Enter para continuar.")
+    else:
+        print("/Lista ordenada por quick sort:")
+        for i in distancias_quick:
             print(f"{i[0]}, Distancia: {i[1]}")
         input("Presione Enter para continuar.")
     
