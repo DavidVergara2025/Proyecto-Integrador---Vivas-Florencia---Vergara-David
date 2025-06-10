@@ -33,4 +33,4 @@ Este trabajo permitió aplicar de forma práctica varios de los contenidos visto
 A través del desarrollo de un gestor de distancias, se logró observar cómo varía el rendimiento según el algoritmo utilizado, y en qué situaciones conviene aplicar uno u otro.
 En resumen, fue una experiencia útil para integrar teoría y práctica, y para afianzar conocimientos clave en programación.
 
-A continuación, se proporciona el enlace de youtube del video explicativo del proyecto: https://youtu.be/aFF7qU7UZYM?si=7mG-Ip9i2YQqCPJ2&utm_source=ZTQxO
+A continuación, se proporciona el enlace de youtube del video explicativo del proyecto: https://youtu.be/KdmxNac4XjY
