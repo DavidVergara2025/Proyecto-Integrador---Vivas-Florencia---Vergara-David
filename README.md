@@ -9,8 +9,9 @@
 ## 📂 Descripción del Repositorio  
 Este repositorio contiene los archivos relacionados con el **Proyecto Integrador - Programación 1**.  
 
-📌 **Estructura del repositorio:**  
-- Contiene los módulos del programa "Gestor de distancias", y el informe detallado del proyecto realizado, con el código documentado y las capturas de pantalla del proceso.  
+El presente trabajo se centró en la temática **Algoritmos de búsqueda y ordenamiento**, con aplicación práctica en el desarrollo de un **Gestor de distancias en Python**.
 
-Enlace de youtube del video explicativo del proyecto: https://www.youtube.com/watch?v=aFF7qU7UZYM&ab_channel=FlorenciaVivas
-Enlace del informe: 
+📌 **Estructura del repositorio:**  
+- Contiene los módulos del programa "Gestor de distancias"(archivos main.py, funciones.py, busqueda.py y ordenamiento.py), y el informe detallado del proyecto realizado en formato PDF, con el código documentado y las capturas de pantalla del proceso.  
+
+A continuación, se proporciona el enlace de youtube del video explicativo del proyecto: https://www.youtube.com/watch?v=aFF7qU7UZYM&ab_channel=FlorenciaVivas
