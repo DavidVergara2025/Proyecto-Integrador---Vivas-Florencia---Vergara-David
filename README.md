@@ -20,7 +20,8 @@ El presente trabajo se centró en la temática **Algoritmos de búsqueda y orden
 -Desde la terminal, ubicarse en el directorio del proyecto y ejecutar:
 
 ```bash
-python main.py
+Python main.py
+```
 -Siga las instrucciones que aparecen en pantalla.
 
 
